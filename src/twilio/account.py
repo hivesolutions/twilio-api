@@ -19,7 +19,7 @@
 # You should have received a copy of the GNU General Public License
 # along with Hive Twitter API. If not, see <http://www.gnu.org/licenses/>.
 
-__author__ = "João Magalhães <joamag@hive.pt>"
+__author__ = "Joï¿½o Magalhï¿½es <joamag@hive.pt>"
 """ The author(s) of the module """
 
 __version__ = "1.0.0"
@@ -37,9 +37,9 @@ __copyright__ = "Copyright (c) 2008-2014 Hive Solutions Lda."
 __license__ = "GNU General Public License (GPL), Version 3"
 """ The license for the module """
 
-class SearchApi(object):
+class AccountApi(object):
 
-    def tweets_search(self, query):
-        url = self.base_url + "1.1/search/tweets.json"
-        contents = self.get(url, q = query)
+    def usage_account(self):
+        url = self.base_url + "Usage/Records"
+        contents = self.get(url)
         return contents

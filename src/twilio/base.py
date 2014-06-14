@@ -39,11 +39,16 @@ __license__ = "GNU General Public License (GPL), Version 3"
 
 import appier
 
+from twilio import account
+
 BASE_URL = "https://api.twilio.com/2010-04-01/"
 """ The default base url to be used when no other
 base url value is provided to the constructor """
 
-class Api(appier.Api):
+class Api(
+    appier.Api,
+    account.AccountApi
+):
 
     def __init__(self, *args, **kwargs):
         appier.OAuth1Api.__init__(self, *args, **kwargs)
