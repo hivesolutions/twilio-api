@@ -48,3 +48,10 @@ class Api(appier.Api):
     def __init__(self, *args, **kwargs):
         appier.OAuth1Api.__init__(self, *args, **kwargs)
         self.base_url = kwargs.get("base_url", BASE_URL)
+        self.sid = kwargs.get("sid", None)
+        self._build_url()
+
+    def _build_url(self):
+        if not self.sid:
+            raise appier.OperationalError(message = "No account sid provided")
+        self.accounts_url = self.base_url + "Accounts/%s/" % self.sid
