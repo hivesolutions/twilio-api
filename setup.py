@@ -37,9 +37,40 @@ __copyright__ = "Copyright (c) 2008-2014 Hive Solutions Lda."
 __license__ = "GNU General Public License (GPL), Version 3"
 """ The license for the module """
 
-class AccountApi(object):
+import os
+import setuptools
 
-    def usage_account(self):
-        url = self.base_url + "Usage/Records"
-        contents = self.get(url)
-        return contents
+setuptools.setup(
+    name = "twilio_api",
+    version = "0.1.0",
+    author = "Hive Solutions Lda.",
+    author_email = "development@hive.pt",
+    description = "Twilio API",
+    license = "GNU General Public License (GPL), Version 3",
+    keywords = "twilio api",
+    url = "http://twilio_api.hive.pt",
+    zip_safe = False,
+    packages = [
+        "twilio"
+    ],
+    package_dir = {
+        "" : os.path.normpath("src")
+    },
+    install_requires = [
+        "appier"
+    ],
+    classifiers = [
+        "Development Status :: 3 - Alpha",
+        "Topic :: Utilities",
+        "License :: OSI Approved :: GNU General Public License (GPL)",
+        "Operating System :: OS Independent",
+        "Programming Language :: Python",
+        "Programming Language :: Python :: 2.6",
+        "Programming Language :: Python :: 2.7",
+        "Programming Language :: Python :: 3.0",
+        "Programming Language :: Python :: 3.1",
+        "Programming Language :: Python :: 3.2",
+        "Programming Language :: Python :: 3.3",
+        "Programming Language :: Python :: 3.4"
+    ]
+)
