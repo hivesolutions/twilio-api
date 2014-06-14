@@ -40,6 +40,7 @@ __license__ = "GNU General Public License (GPL), Version 3"
 import appier
 
 from twilio import account
+from twilio import message
 
 BASE_URL = "https://api.twilio.com/2010-04-01/"
 """ The default base url to be used when no other
@@ -52,7 +53,8 @@ url version of the url """
 
 class Api(
     appier.Api,
-    account.AccountApi
+    account.AccountApi,
+    message.MessageApi
 ):
 
     def __init__(self, *args, **kwargs):
