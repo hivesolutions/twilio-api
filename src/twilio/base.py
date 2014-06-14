@@ -59,4 +59,4 @@ class Api(
     def _build_url(self):
         if not self.sid:
             raise appier.OperationalError(message = "No account sid provided")
-        self.accounts_url = self.base_url + "Accounts/%s/" % self.sid
+        self.account_url = self.base_url + "Accounts/%s/" % self.sid
