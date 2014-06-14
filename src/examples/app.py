@@ -48,13 +48,13 @@ class TwilioApp(appier.WebApp):
 
     @appier.route("/", "GET")
     def index(self):
-        return self.me()
+        return self.usage()
 
-    @appier.route("/me", "GET")
-    def me(self):
+    @appier.route("/usage", "GET")
+    def usage(self):
         api = self.get_api()
-        account = api.verify_account()
-        return account
+        usage = api.usage_account()
+        return usage
 
     def get_api(self):
         return base.get_api()

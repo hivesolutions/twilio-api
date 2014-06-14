@@ -43,5 +43,6 @@ import twilio
 
 def get_api():
     return twilio.Api(
-        sid = appier.conf("TWILIO_SID")
+        sid = appier.conf("TWILIO_SID"),
+        auth_token = appier.conf("TWILIO_AUTH_TOKEN")
     )

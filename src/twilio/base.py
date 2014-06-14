@@ -45,6 +45,11 @@ BASE_URL = "https://api.twilio.com/2010-04-01/"
 """ The default base url to be used when no other
 base url value is provided to the constructor """
 
+BASE_TEMPLATE = "https://%s:%s@api.twilio.com/2010-04-01/"
+""" The default base url template support that is
+going to be used in the construction of the secure
+url version of the url """
+
 class Api(
     appier.Api,
     account.AccountApi
@@ -53,10 +58,15 @@ class Api(
     def __init__(self, *args, **kwargs):
         appier.OAuth1Api.__init__(self, *args, **kwargs)
         self.base_url = kwargs.get("base_url", BASE_URL)
+        self.base_template = kwargs.get("base_template", BASE_TEMPLATE)
         self.sid = kwargs.get("sid", None)
+        self.auth_token = kwargs.get("auth_token", None)
         self._build_url()
 
     def _build_url(self):
         if not self.sid:
             raise appier.OperationalError(message = "No account sid provided")
-        self.account_url = self.base_url + "Accounts/%s/" % self.sid
+        if not self.auth_token:
+            raise appier.OperationalError(message = "No auth token provided")
+        self.secure_url = self.base_template % (self.sid, self.auth_token)
+        self.account_url = self.secure_url + "Accounts/%s/" % self.sid

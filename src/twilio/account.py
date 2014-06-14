@@ -39,7 +39,7 @@ __license__ = "GNU General Public License (GPL), Version 3"
 
 class AccountApi(object):
 
-    def usage_account(self):
-        url = self.base_url + "Usage/Records"
+    def usage_account(self, period = "LastMonth"):
+        url = self.account_url + "Usage/Records/%s.json" % period
         contents = self.get(url)
         return contents
