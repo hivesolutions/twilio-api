@@ -56,6 +56,15 @@ class TwilioApp(appier.WebApp):
         usage = api.usage_account()
         return usage
 
+    @appier.route("/message", "GET")
+    def message(self):
+        sender = self.field("sender")
+        receiver = self.field("receiver")
+        body = self.field("body")
+        api = self.get_api()
+        result = api.send_message(sender, receiver, body)
+        return result
+
     def get_api(self):
         return base.get_api()
 

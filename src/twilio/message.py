@@ -41,11 +41,14 @@ class MessageApi(object):
 
     def send_message(self, sender, receiver, body = None, media_url = None):
         url = self.account_url + "Messages.json"
+        kwargs = {
+          "From" : sender,
+          "To" : receiver
+        }
         contents = self.post(
             url,
-            sender = sender,
-            receiver = receiver,
-            body = body,
-            media_url = media_url
+            Body = body,
+            MediaUrl = media_url,
+            **kwargs
         )
         return contents
