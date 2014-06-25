@@ -58,7 +58,7 @@ class Api(
 ):
 
     def __init__(self, *args, **kwargs):
-        appier.OAuth1Api.__init__(self, *args, **kwargs)
+        appier.Api.__init__(self, *args, **kwargs)
         self.base_url = kwargs.get("base_url", BASE_URL)
         self.base_template = kwargs.get("base_template", BASE_TEMPLATE)
         self.sid = kwargs.get("sid", None)
