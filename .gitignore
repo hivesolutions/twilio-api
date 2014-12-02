@@ -3,5 +3,5 @@
 
 session.shelve*
 
-/dist/
-/src/twilio_api.egg-info/
+/dist
+/src/twilio_api.egg-info
