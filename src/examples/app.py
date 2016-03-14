@@ -43,8 +43,12 @@ from . import base
 
 class TwilioApp(appier.WebApp):
 
-    def __init__(self):
-        appier.WebApp.__init__(self, name = "twilio")
+    def __init__(self, *args, **kwargs):
+        appier.WebApp.__init__(
+            self,
+            name = "twilio",
+            *args, **kwargs
+        )
 
     @appier.route("/", "GET")
     def index(self):
