@@ -75,3 +75,5 @@ class TwilioApp(appier.WebApp):
 if __name__ == "__main__":
     app = TwilioApp()
     app.serve()
+else:
+    __path__ = []
