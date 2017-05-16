@@ -48,7 +48,7 @@ setuptools.setup(
     description = "Twilio API Client",
     license = "Apache License, Version 2.0",
     keywords = "twilio api",
-    url = "http://twilio_api.hive.pt",
+    url = "http://twilio-api.hive.pt",
     zip_safe = False,
     packages = [
         "twilio"
