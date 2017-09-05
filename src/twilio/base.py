@@ -51,14 +51,14 @@ BASE_TEMPLATE = "https://%s:%s@api.twilio.com/2010-04-01/"
 going to be used in the construction of the secure
 url version of the url """
 
-class Api(
-    appier.Api,
-    account.AccountApi,
-    message.MessageApi
+class API(
+    appier.API,
+    account.AccountAPI,
+    message.MessageAPI
 ):
 
     def __init__(self, *args, **kwargs):
-        appier.Api.__init__(self, *args, **kwargs)
+        appier.API.__init__(self, *args, **kwargs)
         self.sid = appier.conf("TWILIO_SID", None)
         self.auth_token = appier.conf("TWILIO_AUTH_TOKEN", None)
         self.base_url = kwargs.get("base_url", BASE_URL)

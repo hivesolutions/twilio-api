@@ -37,7 +37,7 @@ __copyright__ = "Copyright (c) 2008-2017 Hive Solutions Lda."
 __license__ = "Apache License, Version 2.0"
 """ The license for the module """
 
-class AccountApi(object):
+class AccountAPI(object):
 
     def usage_account(self, period = "LastMonth"):
         url = self.account_url + "Usage/Records/%s.json" % period

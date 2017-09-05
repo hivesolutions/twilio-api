@@ -38,6 +38,6 @@ from . import account
 from . import base
 from . import message
 
-from .account import AccountApi
-from .base import BASE_URL, Api
-from .message import MessageApi
+from .account import AccountAPI
+from .base import BASE_URL, API
+from .message import MessageAPI
