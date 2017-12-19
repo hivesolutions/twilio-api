@@ -43,11 +43,11 @@ from . import account
 from . import message
 
 BASE_URL = "https://api.twilio.com/2010-04-01/"
-""" The default base url to be used when no other
-base url value is provided to the constructor """
+""" The default base URL to be used when no other
+base URL value is provided to the constructor """
 
 BASE_TEMPLATE = "https://%s:%s@api.twilio.com/2010-04-01/"
-""" The default base url template support that is
+""" The default base URL template support that is
 going to be used in the construction of the secure
 url version of the url """
 
