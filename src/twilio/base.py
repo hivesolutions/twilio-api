@@ -49,7 +49,7 @@ base URL value is provided to the constructor """
 BASE_TEMPLATE = "https://%s:%s@api.twilio.com/2010-04-01/"
 """ The default base URL template support that is
 going to be used in the construction of the secure
-url version of the url """
+URL version of the URL """
 
 class API(
     appier.API,
