@@ -5,4 +5,4 @@ session.shelve*
 
 /dist
 /build
-/src/twilio-api.egg-info
+/src/twilio_api.egg-info
