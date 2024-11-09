@@ -28,11 +28,10 @@ __copyright__ = "Copyright (c) 2008-2024 Hive Solutions Lda."
 __license__ = "Apache License, Version 2.0"
 """ The license for the module """
 
+import unittest
 
-class MessageAPI(object):
 
-    def send_message(self, sender, receiver, body=None, media_url=None):
-        url = self.account_url + "Messages.json"
-        kwargs = {"From": sender, "To": receiver}
-        contents = self.post(url, Body=body, MediaUrl=media_url, **kwargs)
-        return contents
+class BaseTest(unittest.TestCase):
+
+    def test_basic(self):
+        self.assertEqual(1 + 1, 2)

@@ -19,20 +19,8 @@
 # You should have received a copy of the Apache License along with
 # Hive Twilio API. If not, see <http://www.apache.org/licenses/>.
 
-__author__ = "João Magalhães <joamag@hive.pt>"
-""" The author(s) of the module """
-
 __copyright__ = "Copyright (c) 2008-2024 Hive Solutions Lda."
 """ The copyright for the module """
 
 __license__ = "Apache License, Version 2.0"
 """ The license for the module """
-
-
-class MessageAPI(object):
-
-    def send_message(self, sender, receiver, body=None, media_url=None):
-        url = self.account_url + "Messages.json"
-        kwargs = {"From": sender, "To": receiver}
-        contents = self.post(url, Body=body, MediaUrl=media_url, **kwargs)
-        return contents
