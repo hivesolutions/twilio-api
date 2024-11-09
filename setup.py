@@ -42,7 +42,7 @@ setuptools.setup(
     url="http://twilio-api.hive.pt",
     zip_safe=False,
     packages=["twilio"],
-    test_suite="nexmo.test",
+    test_suite="twilio.test",
     package_dir={"": os.path.normpath("src")},
     install_requires=["appier"],
     classifiers=[
