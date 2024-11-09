@@ -1,6 +1,6 @@
 # [Twilio API](http://twilio-api.hive.pt)
 
-REST based client for the Twilio infra-structure.
+REST based client for the [Twilio](https://www.twilio.com/) infra-structure.
 
 ## License
 
